@@ -5,12 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+users = %w(steve sal gem greer saad berts greer saad berts steve sal gem greer saad berts greer saad berts steve sal gem greer saad berts greer saad berts)
 for i in 1..20
     Toy.create(
-        name: Faker::Beer.name,
-        description: Faker::Beer.style,
-        date: Faker::Date.between(from: 200.days.ago, to: Date.today),
-        user: Faker::Beer.brand    
+        name: "Toy #{i}",
+        description: "Toy #{i} is very safe",
+        date_posted: Time.now,
+        user: users[i]
     )
-    puts "Created #{i} toy(s)"
+
+    p "Created #{i} books"
 end
